@@ -14,7 +14,7 @@ function ClientApp() {
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
   const { data, isSuccess } = useQuery({
-    queryKey: ["notes", currentPage],
+    queryKey: ["notes", currentPage, search],
     queryFn: () => fetchNotes({ page: currentPage, perPage: 12, search }),
     placeholderData: keepPreviousData,
     refetchOnMount: false,
@@ -33,7 +33,6 @@ function ClientApp() {
   const handleSubmit = () => {
     setModalMenuClose();
   };
-  console.log({ totalPages, currentPage });
   return (
     <div className={css.app}>
       {isModalOpen && (
