@@ -1,4 +1,4 @@
-import css from "@/component/Footer/Footer.module.css";
+import css from "./Footer.module.css";
 import Link from "next/link";
 export default function Footer() {
   return (
